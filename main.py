@@ -29,7 +29,8 @@ def producer():
 
         producer.flush()
 
-def consumer():
+def consumer(): # put data into parquet
+
     consumer = KafkaConsumer('demo1', bootstrap_servers=['MAYTINH-UHGO2M2:9092'],
                              value_deserializer=lambda x: loads(x.decode('utf-8')))
     df=[]
